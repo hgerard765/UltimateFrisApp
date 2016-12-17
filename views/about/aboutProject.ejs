@@ -1,0 +1,44 @@
+<%- include("./../includes/header.ejs", {title: title, stylesheet: stylesheet}); %>
+
+<br/>
+<br/>
+
+<div class="clearfix">
+    <div class="column menu">
+        <ul>
+            <li>
+                <a href="/about/all"> Overall Project </a>
+            </li>
+            <li>
+                <a href="/about/diagram"> ER Diagram </a>
+            </li>
+            <li>
+                <a href="/about/relational"> Relational Schema </a>
+            </li>
+        </ul>
+    </div>
+    <div class="column content">
+        <div id="overall">
+            <% if (isDiagram == true) { %>
+            <H1> ER Diagram </H1>
+            <img id="image" src="<%= image %>">
+            <% } else if (isRelational == true) { %>
+            <H1> Relational Schema </H1>
+            <img id="image" src="<%= image %>">
+            <% } else { %>
+            <div id="about">
+                <H1> ABOUT THE PROJECT </H1>
+                <h2> Purpose: The goal of this website is to store Ultimate Frisbee Players and the teams they’ve played on.</h2>
+                <br/>
+                <br/>
+                <h2> Company: <a href="http://www.usaultimate.org/index.html" style="color: darkblue">  USA Ultimate </a></h2>
+                <h2> Developer: <a href="https://github.com/hgerard765" style="color: darkblue;"> Hayley Gerard </a></h2>
+                <br/>
+                <br/>
+                <h2> Assignment: <a href="http://www.cs.sonoma.edu/~haderman/cs355/project2.pdf" style="color: darkblue;"> CS355 Project 2</a> </h2>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</div>
+<%- include("./../includes/footer.ejs"); %>

@@ -1,0 +1,11 @@
+<%- include("../includes/header.ejs", {title:"Add New Tournaments - " + result[0].tournament_name}); %>
+    <h1>Add New tournament</h1>
+    <form action="/tournament/insert" method="get">
+        Tournament Name: <input id="tournament_name" name="tournament_name" type="text" />
+        <br />
+        Host Name: <input id="host" name="host" type="text" />
+
+        <input type="submit" />
+
+    </form>
+<%- include("../includes/footer.ejs"); %>

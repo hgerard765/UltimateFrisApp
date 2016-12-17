@@ -1,0 +1,8 @@
+<%- include("../includes/header.ejs", {title:"Players - " + result[0].player_name}); %>
+    <h1>Players</h1>
+    <ul>
+        <li>Player Name: <%= result[0].player_name %></li>
+        <li>Player Level: <%= result[0].player_level %></li>
+        <li>Number of Years Played: <%= result[0].years_played %></li>
+    </ul>
+<%- include("../includes/footer.ejs"); %>

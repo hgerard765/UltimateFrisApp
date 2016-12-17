@@ -1,0 +1,7 @@
+<%- include("../includes/header.ejs", {title:"Tournaments - " + result[0].tournament_name}); %>
+    <h1>Tournaments</h1>
+    <ul>
+        <li>Tournament Name: <%= result[0].tournament_name %></li>
+        <li>Host Name: <%= result[0].host %></li>
+    </ul>
+<%- include("../includes/footer.ejs"); %>

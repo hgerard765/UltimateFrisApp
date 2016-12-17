@@ -1,0 +1,14 @@
+<%- include("../includes/header.ejs", {title:"Associations - " + result[0].association_name}); %>
+    <h1>Add New Association</h1>
+    <form action="/association/insert" method="get">
+        Association Name: <input id="association_name" name="association_name" type="text" />
+        <br />
+        <br />
+        Description: <input id="description" name="description" type="text" />
+        <br />
+        <br />
+
+        <input type="submit" />
+
+    </form>
+<%- include("../includes/footer.ejs"); %>

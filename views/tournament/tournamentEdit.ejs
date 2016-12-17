@@ -1,0 +1,13 @@
+<%- include("../includes/header.ejs", {title:"Add New Tournaments - " + result[0].tournament_name}); %>
+<h1>Update Tournament</h1>
+<form action="/tournament/update" method="get">
+    <!--<input type="hidden" id="usa_u_id" name="usa_u_id" value="<%= result[0].usa_u_id %>">-->
+    Tournament Name: <input id="tournament_name" name="tournament_name" type="text" value="<%=result[0].tournament_name %>"/>
+    <br />
+    <br />
+    Host Name: <input id="host" name="host" type="text" value="<%= result[0].host %>" />
+
+    <input type="submit" />
+
+</form>
+<%- include("../includes/footer.ejs"); %>

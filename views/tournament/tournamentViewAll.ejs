@@ -1,0 +1,23 @@
+<%- include("../includes/header.ejs", {title:"Tournaments - " + result[0].tournament_name}); %>
+        <h1>Tournaments</h1>
+        <a href="/tournament/add">Add New Tournament</a> <br />
+
+    <br />
+
+        <table border="1">
+            <tr><th>Tournament Name</th><th>Host Name</th><th>Action</th></tr>
+            <% for(var i=0; result.length > i; i++ ) { %>
+            <tr>
+                <td><a href="/tournament/?tournament_name=<%= result[i].tournament_name %>"><%= result[i].tournament_name %></a></td>
+                <td><%= result[i].host %></td>
+                <td>
+                    <!--<button onclick="event.preventDefault();window.location.href='/tournament/edit2/?tournament_name=<%= result[i].tournament_name %>'">Edit</button>-->
+                    <form action="/tournament/delete/">
+                        <input type="hidden" name="tournament_name" id="tournament_name" value="<%= result[i].tournament_name %>" />
+                        <input type="submit" value="Delete"/>
+                    </form>
+                </td>
+            </tr>
+            <% } %>
+        </table>
+<%- include("../includes/footer.ejs"); %>

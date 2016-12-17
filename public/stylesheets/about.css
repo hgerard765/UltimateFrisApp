@@ -1,0 +1,110 @@
+.nav {
+    background-color: white;
+}
+
+.nav a {
+    color: #5a5a5a;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 14px 10px;
+    text-transform: uppercase;
+}
+
+.nav li {
+    display: inline;
+}
+
+body {
+    background-color: gray;
+}
+
+.column {
+    float: left;
+    padding: 15px;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.menu {
+    width: 25%;
+}
+.content {
+    width: 75%;
+    background-color: lightgrey;
+}
+
+#overall {
+    background-color: ghostwhite;
+    padding: 1cm;
+    text-align: center;
+    border: solid #000;
+    border-width: 0.25cm;
+}
+
+#overall #image {
+    height: 100%;
+    width: 100%;
+
+}
+
+#menuItem {
+    background-color: purple;
+    font-size: x-large;
+}
+
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.menu li {
+    padding: 8px;
+    margin-bottom: 8px;
+    background-color: black;
+    color: #ffffff;
+}
+.menu li:hover {
+    background-color: ghostwhite;
+    color: black;
+}
+
+
+table.all {
+    background-color: ghostwhite;
+    display: table;
+    border-collapse: separate;
+    border-spacing: 1cm;
+    border: solid #000;
+    border-width: 0.25cm;
+    padding: 2cm;
+    margin-top: 1px;
+    text-align: left;
+    /*float: left;*/
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+table.items td {
+    /*border: collapse;*/
+    border-top: 1px solid blue;
+
+}
+
+tr.items {
+    border: 3px solid blue;
+    text-align: center;
+}
+
+td.itemName {
+    width: 350px;
+    padding: 8px;
+    text-align: left;
+
+}

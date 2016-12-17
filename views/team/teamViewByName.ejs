@@ -1,0 +1,11 @@
+<%- include("../includes/header.ejs", {title:"Teams - " + result[0].team_name}); %>
+    <h1>Team</h1>
+    <ul>
+        <li>Team Name: <%= result[0].team_name %></li>
+        <li>Captain Name: <%= result[0].player_name %></li>
+        <li>Association Name: <%= result[0].association_name %></li>
+        <li>Gender: <%= result[0].gender %></li>
+        <li>Competition Level: <%= result[0].competition_level %></li>
+        <li>School: <%= result[0].school %></li>
+    </ul>
+<%- include("../includes/footer.ejs"); %>

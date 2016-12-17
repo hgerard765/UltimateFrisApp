@@ -1,0 +1,8 @@
+<%- include("../includes/header.ejs", {title:"Associations - " + result[0].association_name}); %>
+    <h1>Association</h1>
+    <ul>
+        <li>Association ID: <%= result[0].association_id %></li>
+        <li>Association Name: <%= result[0].association_name %></li>
+        <li>Description: <%= result[0].description %></li>
+    </ul>
+<%- include("../includes/footer.ejs"); %>

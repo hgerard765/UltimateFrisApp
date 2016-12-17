@@ -1,0 +1,15 @@
+<%- include("../includes/header.ejs", {title:"Add New Players - " + result[0].player_name}); %>
+    <h1>Add New Player</h1>
+    <form action="/player/insert" method="get">
+        Player Name: <input id="player_name" name="player_name" type="text" />
+        <br />
+        <br />
+        Player Level: <input id="player_level" name="player_level" type="text" />
+        <br />
+        <br />
+        Number of Years Played: <input id="years_played" name="years_played" type="text" />
+
+        <input type="submit" />
+
+    </form>
+<%- include("../includes/footer.ejs"); %>

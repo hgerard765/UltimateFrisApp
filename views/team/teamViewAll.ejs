@@ -1,0 +1,27 @@
+<%- include("../includes/header.ejs", {title:"Teams - " + result[0].team_name}); %>
+        <h1>Teams</h1>
+        <a href="/team/add">Add New Team</a> <br />
+
+        <br />
+
+        <table border="1">
+            <tr><th> Team Name </th><th> Association Name </th><th> Captain Name </th><th> Gender </th><th> Competition Level </th><th> School Name </th><th>Action</th></tr>
+            <% for(var i=0; result.length > i; i++ ) { %>
+            <tr>
+                <td><a href="/team/?team_name=<%= result[i].team_name %>"><%= result[i].team_name %></a></td>
+                <td><a href="/association/?association_id=<%= result[i].association_id %>"><%= result[i].association_name %></a></td>
+                <td><a href="/player/?usa_u_id=<%= result[i].usa_u_id %>"><%= result[i].player_name %></a></td>
+                <td><%= result[i].gender %></td>
+                <td><%= result[i].competition_level %></td>
+                <td><%= result[i].school %></td>
+                <td>
+                    <button onclick="event.preventDefault();window.location.href='/team/edit2/?team_name=<%= result[i].team_name %>'">Edit</button>
+                    <form action="/team/delete/">
+                        <input type="hidden" name="team_name" id="team_name" value="<%= result[i].team_name %>" />
+                        <input type="submit" value="Delete"/>
+                    </form>
+                </td>
+            </tr>
+            <% } %>
+        </table>
+<%- include("../includes/footer.ejs"); %>

@@ -1,0 +1,51 @@
+<%- include("../includes/header.ejs", {title:"Update Team"}); %>
+<h1>Update Team</h1>
+<form action="/team/update" method="get">
+    <input type="hidden" id="usa_u_id" name="usa_u_id" value="<%= team[0].usa_u_id %>">
+    <input type="hidden" id="old_name" name="old_name" value="<%= team[0].team_name %>">
+
+    Team Name: <input id="team_name" name="team_name" type="text" value="<%=team[0].team_name %>"/>
+    <br />
+    <br />
+    Gender: <input id="gender" name="gender" type="text" value="<%= team[0].gender %>" />
+    <br />
+    <br />
+    Competition Level: <input id="competition_level" name="competition_level" type="text" value="<%= team[0].competition_level %>" />
+    <br />
+    <br />
+    Captain:
+    <select id="captain_id" name="captain_id" multiple="multiple">
+        <% for(var i=0; players.length > i; i++ ) {
+            console.log("PLAYERS gffdgfdg: "+ players);
+            var selected = "";
+            console.log("LOBOS: " + players[i].usa_u_id + " RES: " + team[0].captain_id);
+            if(selected == "" && players[i].usa_u_id == team[0].captain_id) {
+                console.log("Getting here");
+                selected = "selected";
+            }%>
+        <option value="<%= players[i].usa_u_id %>" <%= selected %>><%= players[i].player_name %></option>
+        <% } %>
+    </select>
+    <br />
+    <br />
+    Association
+    <select id="association_name" name="association_name">
+        <% for(var i=0; association.length > i; i++ ) { %>
+        <option value="<%= association[i].association_name %>"><%= association[i].association_name  %></option>
+        <% } %>
+    </select>
+    School: <input id="school" name="school" type="text" value="<%= team[0].school %>" />
+    <br />
+    <br />
+
+    <input type="submit" />
+
+    <!-- Initialize the multiselect plugin: -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#captain_id').multiselect();
+        });
+    </script>
+
+</form>
+<%- include("../includes/footer.ejs"); %>

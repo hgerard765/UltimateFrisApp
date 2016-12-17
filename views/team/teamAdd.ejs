@@ -1,0 +1,35 @@
+<%- include("../includes/header.ejs", {title:"Add New Teams"}); %>
+    <h1>Add New Team</h1>
+    <form action="/team/insert" method="get">
+        Team Name: <input id="team_name" name="team_name" type="text" />
+        <br />
+        <br />
+        Captain
+        <select id="usa_u_id" name="usa_u_id">
+            <% for(var i=0; players.length > i; i++ ) { %>
+            <option value="<%= players[i].usa_u_id %>"><%= players[i].player_name  %></option>
+            <% } %>
+        </select>
+        <br />
+        <br />
+        Association
+        <select id="association_name" name="association_name">
+            <% for(var i=0; association.length > i; i++ ) { %>
+            <option value="<%= association[i].association_name %>"><%= association[i].association_name  %></option>
+            <% } %>
+        </select>
+        Gender: <input id="gender" name="gender" type="text" />
+        <br />
+        <br />
+        Competition Level: <input id="competition_level" name="competition_level" type="text" />
+        <br />
+        <br />
+        School Name: <input id="school" name="school" type="text" />
+        <br />
+        <br />
+
+
+        <input type="submit" />
+
+    </form>
+<%- include("../includes/footer.ejs"); %>

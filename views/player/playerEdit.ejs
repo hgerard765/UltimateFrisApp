@@ -1,0 +1,16 @@
+<%- include("../includes/header.ejs", {title:"Add New Players - " + result[0].player_name}); %>
+<h1>Update Player</h1>
+<form action="/player/update" method="get">
+    <input type="hidden" id="usa_u_id" name="usa_u_id" value="<%= result[0].usa_u_id %>">
+    Player Name: <input id="player_name" name="player_name" type="text" value="<%=result[0].player_name %>"/>
+    <br />
+    <br />
+    Player Level: <input id="player_level" name="player_level" type="text" value="<%= result[0].player_level %>" />
+    <br />
+    <br />
+    Number of Years Played: <input id="years_played" name="years_played" type="text" value="<%= result[0].years_played %>" />
+
+    <input type="submit" />
+
+</form>
+<%- include("../includes/footer.ejs"); %>

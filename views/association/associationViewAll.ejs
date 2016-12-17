@@ -1,0 +1,22 @@
+<%- include("../includes/header.ejs", {title:"Associations - " + result[0].association_name}); %>
+
+        <h1>Associations</h1>
+        <a href="/association/add">Add New Association</a> <br />
+
+    <br />
+
+        <table border="1">
+            <tr><th>Association Name</th><th>Desription</th><th>Action</th></tr>
+            <% for(var i=0; result.length > i; i++ ) { %>
+            <tr>
+                <td><a href="/association/?association_id=<%= result[i].association_id %>"><%= result[i].association_name %></a></td>
+                <td><%= result[i].description %></td>
+                <td><form action="/association/delete/">
+                        <input type="hidden" name="association_id" id="assocation_id" value="<%= result[i].association_id %>" />
+                        <input type="submit" value="Delete"/>
+                    </form>
+                </td>
+            </tr>
+            <% } %>
+        </table>
+<%- include("../includes/footer.ejs"); %>
